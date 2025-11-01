@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aishah | Full Stack .NET Developer</title>
+  <style>
+    :root {
+      --primary: #1e1e2f;
+      --accent: #0078d7;
+      --text: #333;
+      --light: #f4f6fa;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background-color: var(--light);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    header .left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    header img {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    section h2 {
+      color: var(--primary);
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    p { text-align: justify; font-size: 1.05em; margin-bottom: 15px; }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-info a:hover { text-decoration: underline; }
+
+    footer {
+      background: var(--primary);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; }
+      nav { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="left">
+      <!--<img src="images/profile.jpg" alt="Aishah Photo" />-->
+      <h1>Aishah</h1>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>
+      Hello! I'm <strong>Aishah</strong>, a <strong>Full Stack .NET Developer</strong> specializing in 
+      <strong>C#, ASP.NET, SQL Server, and UI Design</strong>. I create scalable, secure, and well-structured 
+      web applications for businesses and government systems.
+    </p>
+    <p>
+      I handle projects end-to-end — from design and development to database optimization and hosting on IIS servers.
+      My focus is delivering reliable and maintainable solutions tailored to each client's needs.
+    </p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a passionate software engineer who enjoys solving complex technical problems with clean and modern solutions. 
+      My experience covers both frontend and backend development, with a strong understanding of enterprise application architecture.
+    </p>
+    <p>
+      I have successfully developed systems involving <strong>REST APIs</strong>, <strong>data encryption</strong>, 
+      <strong>authentication and authorization workflows</strong>, and <strong>SMS OTP integrations</strong>.
+    </p>
+    <p>
+      <strong>Technical Skills:</strong><br>
+      • C#, ASP.NET MVC, Web API, Entity Framework<br>
+      • SQL Server (Procedures, Performance Tuning, Indexing)<br>
+      • HTML5, CSS3, Bootstrap, JavaScript, jQuery<br>
+      • Git, Visual Studio, Postman, IIS Hosting & Deployment
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>What I Do</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>🎨 UI / UX Design</h3>
+        <p>Design clean, responsive interfaces focusing on accessibility and user experience using HTML, CSS, Bootstrap, and JavaScript.</p>
+      </div>
+      <div class="service-card">
+        <h3>💻 Application Development</h3>
+        <p>Develop full-stack .NET applications with secure login, encryption, and API integrations — from concept to deployment.</p>
+      </div>
+      <div class="service-card">
+        <h3>🗄️ Database Engineering</h3>
+        <p>Design and manage relational databases in SQL Server, optimize queries, automate reports, and ensure data integrity.</p>
+      </div>
+      <div class="service-card">
+        <h3>☁️ Hosting & Deployment</h3>
+        <p>Deploy and manage web applications on IIS servers, configure environments, and monitor production for performance and reliability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="contact-info">
+      📧 Email: <a href="mailto:builtbyaishah@gmail.com">builtbyaishah@gmail.com</a><br>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Aishah | Full Stack .NET Developer</p>
+  </footer>
+
+</body>
+</html>
