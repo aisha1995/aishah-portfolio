@@ -11,12 +11,12 @@
       --text: #333;
       --light: #f4f6fa;
       --white: #fff;
+      --gradient: linear-gradient(135deg, #0078d7, #1e1e2f);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
       font-family: "Segoe UI", Tahoma, sans-serif;
       background-color: var(--light);
       color: var(--text);
@@ -34,7 +34,10 @@
       top: 0;
       z-index: 100;
       box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
     }
+
+    header:hover { background: var(--gradient); }
 
     header .left {
       display: flex;
@@ -60,32 +63,41 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: 600;
-      transition: color 0.3s;
+      transition: color 0.3s, transform 0.3s;
     }
-    nav a:hover { color: var(--accent); }
+    nav a:hover { color: var(--accent); transform: translateY(-2px); }
 
     section {
       padding: 80px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       line-height: 1.7;
     }
 
+    section:nth-child(even) { background: #eef1f8; border-radius: 15px; margin-bottom: 40px; }
+
     section h2 {
       color: var(--primary);
       text-align: center;
-      font-size: 2em;
+      font-size: 2.2em;
       margin-bottom: 20px;
+      position: relative;
+      animation: fadeInDown 1s ease;
     }
 
     section h2::after {
       content: "";
       display: block;
-      width: 60px;
-      height: 3px;
+      width: 70px;
+      height: 4px;
       background: var(--accent);
       margin: 8px auto 0;
       border-radius: 2px;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     p { text-align: justify; font-size: 1.05em; margin-bottom: 15px; }
@@ -99,34 +111,38 @@
 
     .service-card {
       background: var(--white);
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      padding: 30px 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
 
     .service-card h3 {
       color: var(--accent);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 1.2em;
     }
 
     .contact-info {
       text-align: center;
       font-size: 1.1em;
+      margin-top: 15px;
     }
 
     .contact-info a {
       color: var(--accent);
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
-    .contact-info a:hover { text-decoration: underline; }
+    .contact-info a:hover { color: var(--primary); text-decoration: underline; }
 
     footer {
       background: var(--primary);
@@ -140,6 +156,9 @@
       header { flex-direction: column; text-align: center; }
       nav { margin-top: 10px; }
     }
+
+    /* Optional: smooth scroll for anchor links */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body>
@@ -178,7 +197,7 @@
     </p>
     <p>
       I have successfully developed systems involving <strong>REST APIs</strong>, <strong>data encryption</strong>, 
-      <strong>authentication and authorization workflows</strong>, and <strong>SMS OTP integrations</strong>.
+      <strong>authentication workflows</strong>, and <strong>SMS OTP integrations</strong>.
     </p>
     <p>
       <strong>Technical Skills:</strong><br>
@@ -194,7 +213,7 @@
     <div class="services">
       <div class="service-card">
         <h3>🎨 UI / UX Design</h3>
-        <p>Design clean, responsive interfaces focusing on accessibility and user experience using HTML, CSS, Bootstrap, and JavaScript.</p>
+        <p>Design clean, responsive interfaces focusing on accessibility and user experience using modern front-end tools.</p>
       </div>
       <div class="service-card">
         <h3>💻 Application Development</h3>
@@ -215,6 +234,7 @@
     <h2>Contact</h2>
     <p class="contact-info">
       📧 Email: <a href="mailto:builtbyaishah@gmail.com">builtbyaishah@gmail.com</a><br>
+     
     </p>
   </section>
 
@@ -224,3 +244,4 @@
 
 </body>
 </html>
+
